@@ -61,3 +61,7 @@ print(extrator_url == extrator_url_2) # Vai dar falso na comparação de objetos
 
 valor_quantidade = extrator_url.get_valor_parametro('quantidade')
 print(valor_quantidade)
+
+print(id(extrator_url))
+print(id(extrator_url_2))
+# O Python quando não implementado o método __eq__, ele compara o endereço de memória e daí fica diferente
