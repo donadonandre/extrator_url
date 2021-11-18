@@ -47,6 +47,9 @@ class ExtratorURL:
     def __str__(self):
         return self.url
 
+    def __eq__(self, other):
+        return self.url == other.url #Agora a comparação volta como True
+
 url = 'https://bytebank.com/cambio?quantidade=100&moedaOrigem=dolar&moedaDestino=real'
 extrator_url = ExtratorURL(url)
 extrator_url_2 = ExtratorURL(url)
@@ -54,6 +57,7 @@ print('O valor da url é', len(extrator_url))
 print(extrator_url)
 
 print(extrator_url == extrator_url_2) # Vai dar falso na comparação de objetos
+# por baixo dos panos o Python chama o __eq__
 
 valor_quantidade = extrator_url.get_valor_parametro('quantidade')
 print(valor_quantidade)
